@@ -1,0 +1,45 @@
+<div class="panel panel-primary" style="background-color: skyblue">
+  <h2 style="font-size: large;color:#0b080f;font-size: 40px; margin-left: auto" >Supplier List and Details</h2>
+  <div class="container" >
+    <div class="col-md-12 table-responsive" #TABLE>
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  search in the items">
+    </div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Items</th>
+        <th>Total Balance</th>
+        <th>Remaining Balance</th>
+        <th>Last Payment</th>
+        <th>Last Payment Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let supplier of supplier | filter:searchText">
+        <td>{{supplier.name}}</td>
+        <td>{{supplier.items}}</td>
+        <td>{{supplier.totalBalance}}</td>
+        <td>{{supplier.remainingBalance}}</td>
+        <td>{{supplier.lastPayment}}</td>
+        <td>{{supplier.lastPaymentDate}}</td>
+     <!--   <td>
+          <button (click)="delete(supplier.id)" class="btn btn-danger">Delete</button>
+          <button (click)="updateSupplierDetail(supplier.id)" class="btn btn-info">Details</button>
+
+          </td>-->
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <button (click)="updateSupplier()" class="btn btn-primary">update details</button><br>
+  <div style="padding-bottom: 10px;padding-top: 10px;">
+    <div class="row">
+      <div class="col-sm-12">
+        <button (click)="exportToExcel()" class="btn btn-success">Export To Excel</button>
+      </div>
+    </div>
+  </div>
+</div>

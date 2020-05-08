@@ -1,0 +1,42 @@
+
+<div [hidden]="submitted" style=" background-color: #dbdbff ;width: 650px">
+  <h3 style="font-size: 25px;font-family: 'Arial ';color: #0b080f" >Updating Supplier details</h3>
+  <form (ngSubmit)="onSubmit()">
+
+    <div>
+      <select name="selectedItem" id="supplierToBeUpdated"  class="form-control" [(ngModel)]="selectedItem">
+        <option *ngFor="let option of supplierToBeUpdated" [value]="option.id">{{option.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="total_Balance">Total balance</label>
+      <input type="text" class="form-control" id="total_Balance" required [(ngModel)]="supplier.totalBalance" name="total_Balance">
+    </div>
+
+    <div class="form-group">
+      <label for="last_payment">last_payment</label>
+      <input type="text" class="form-control" id="last_payment" required [(ngModel)]="supplier.lastPayment" name="last_payment">
+    </div>
+
+    <div class="form-group">
+      <label for="remaining_balance">remaining_balance</label>
+      <input type="text" class="form-control" id="remaining_balance" required [(ngModel)]="supplier.remainingBalance" name="remaining_balance">
+    </div>
+    <div class="form-group">
+      <label for="last_payment_date">last_payment_date</label>
+      <input type="date" class="form-control" id="last_payment_date" required [(ngModel)]="supplier.lastPaymentDate" name="last_payment_date">
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
+

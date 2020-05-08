@@ -1,0 +1,42 @@
+<div [hidden]="submitted" style="width: 400px;" style="background-color: #dbdbff;
+font-size: 25px; font-family: Arial; width: 650px">
+<h2 style="font-weight: bold;font-size: large;color:#0b080f;font-size: 25px">ADD SUPPLIER</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Supplier Name</label>
+      <input type="text" class="form-control" id="supplierName" required [(ngModel)]="supplier.name" name="Name">
+    </div>
+
+    <div class="form-group">
+      <label for="items">Items</label>
+      <input type="text" class="form-control" id="items" required [(ngModel)]="supplier.items" name="items">
+    </div>
+
+    <div class="form-group">
+      <label for="remainingBalance">Remaining Balance</label>
+      <input type="text" class="form-control" id="remainingBalance" required [(ngModel)]="supplier.remainingBalance" name="remainingBalance">
+    </div>
+    <div class="form-group">
+      <label for="totalBalance">Total Balance</label>
+      <input type="text" class="form-control" id="totalBalance" required [(ngModel)]="supplier.totalBalance" name="totalBalance">
+
+    </div>
+    <div class="form-group">
+      <label for="lastPayment">Last Payment</label>
+      <input type="text" class="form-control" id="lastPayment" required [(ngModel)]="supplier.lastPayment" name="lastPayment">
+
+    </div>
+    <div class="form-group">
+      <label for="lastPaymentDate">Last Payment Date</label>
+      <input type="date" class="form-control" id="lastPaymentDate" required [(ngModel)]="supplier.lastPaymentDate" name="lastPaymentDate">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

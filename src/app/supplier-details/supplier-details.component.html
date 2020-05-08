@@ -1,0 +1,37 @@
+<h2>Supplier Details</h2>
+
+<hr/>
+<div *ngIf="supplier">
+  <div>
+    <label><b> Name: </b></label> {{supplier.name}}
+  </div>
+  <div>
+    <label><b>ITEM of supplier </b></label> {{supplier.items}}
+  </div>
+
+  <div>
+    <label><b>Last Payment </b></label> {{supplier.lastPayment}}
+  </div>
+  <div>
+    <label><b>Total Balance </b></label> {{supplier.totalBalance}}
+  </div>
+
+
+  <div>
+    <label><b>Remaing Balance </b></label> {{supplier.remainingBalance}}
+  </div>
+  <div>
+
+    <label><b>Last Payment Date : </b></label> {{supplier.lastPaymentDate}}
+  </div>
+
+
+
+
+
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to suppliers List</button><br>
+

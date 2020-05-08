@@ -1,0 +1,62 @@
+
+
+<nav class="navbar navbar-expand-sm nav-tabs " style="background-color:transparent ; solid-color:yellowgreen">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a *ngIf="hasToken()" routerLink="employeesList" class="nav-link" routerLinkActive="active"  >Employee List</a>
+    </li>
+    <li class="nav-item">
+      <a *ngIf="hasToken()" routerLink="addEmployee" class="nav-link" routerLinkActive="active">Add Employee</a>
+    </li>
+    <li class="nav-item">
+    <a *ngIf="hasToken()" routerLink="addItems" class="nav-link" routerLinkActive="active">Add Item</a>
+  </li>
+    <li class="nav-item">
+      <a *ngIf="hasToken()" routerLink="itemsList" class="nav-link" routerLinkActive="active">Item List</a>
+    </li>
+    <li class="nav-item">
+      <a *ngIf="!hasToken()" routerLink="login" class="nav-link" routerLinkActive="active">login</a>
+    </li>
+    <li class="nav-item">
+      <a *ngIf="hasToken()" routerLink="customerList" class="nav-link" routerLinkActive="active">Customer List</a>
+    </li>
+    <li class="nav-item">
+      <a *ngIf="hasToken()" routerLink="addCustomer" class="nav-link" routerLinkActive="active">Add Customer</a>
+    </li>
+    <li class="nav-item">
+      <a *ngIf="hasToken()" routerLink="itemEntry" class="nav-link" routerLinkActive="active">Entries</a>
+    </li>
+    <li class="nav-item">
+      <a *ngIf="hasToken()" routerLink="addSupplier" class="nav-link" routerLinkActive="active">ADD SUPPLIERS</a>
+    </li>
+    <li class="nav-item">
+      <a *ngIf="hasToken()" routerLink="supplierList" class="nav-link" routerLinkActive="active">Supplier List</a>
+    </li>
+    <li class="nav-item">
+      <a *ngIf="hasToken()"  click="logout()"  routerLink="/logout" class="nav-link"  onrouterLinkActive="active" >logout</a>
+    </li>
+
+  </ul>
+</nav>
+<div class="card-header" style="align-items: center">
+  <br>
+  <h2 style=" text-align: center;
+              size : landscape;
+              font-size: 110px;
+              font-family: 'Californian FB';
+              color: #f1ff00;
+              font-weight: bold;
+  ">{{title}}</h2>
+  <hr>
+
+    <div class="card-body"  style="background-color: transparent">
+      <router-outlet></router-outlet>
+    </div>
+<!--  <footer class="footer">
+    <div class="container">
+      <span style="align-content: center">0515125238</span>
+    </div>
+  </footer>-->
+</div>
+

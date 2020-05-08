@@ -1,0 +1,45 @@
+<div class="panel panel-primary" style="background-color: skyblue">
+  <h2 style="font-weight: bold;font-size: large;color:#0b080f;font-size: 40px; margin-left: auto" >Items List</h2>
+  <div class="container" >
+    <div class="col-md-12 table-responsive" #TABLE>
+      <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="  search in the items">
+      </div>
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+          <th>name</th>
+          <th>quantity</th>
+          <th>price</th>
+          <th>company</th>
+          <th>size</th>
+        <!--  <th>Actions</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of item | filter:searchText   ">
+          <td>{{item.item}}</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.company}}</td>
+          <td>{{item.size}}</td>
+        <!--    <td>
+              <button (click)="deleteItem(item.id)" class="btn btn-danger">Delete</button>
+              <button (click)="itemDetails(item.id)" class="btn btn-info" style="margin-left: 10px">update</button>
+            </td>-->
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+    <div style="padding-bottom: 10px;padding-top: 10px;">
+      <div class="row">
+        <div class="col-sm-12">
+          <button (click)="exportToExcel()" class="btn btn-success">Export To Excel</button>
+        </div>
+      </div>
+    </div>
+</div>
+

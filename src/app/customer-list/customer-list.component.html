@@ -1,0 +1,40 @@
+
+<div class="panel panel-primary" style="background-color: skyblue">
+  <h2 style="font-weight: bold;font-size: large;color:#0b080f;font-size: 40px; margin-left: auto" >Customer List</h2>
+
+  <div class="container">
+    <div class="col-md-12 table-responsive">
+      <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" search in the items">
+      </div>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>phoneNumber</th>
+          <th>Area</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+        <tr *ngFor="let customer of customer | filter:searchText   ">
+          <td>{{customer.name}}</td>
+          <td>{{customer.phoneNumber}}</td>
+          <td>{{customer.area}}</td>
+          <td>
+            <button (click)="deleteCustomer(customer.id)" class="btn btn-danger">Delete</button>
+            <button (click)="updateCustomer(customer.id)" class="btn btn-info" style="margin-left: 10px">update</button>
+
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+  </div>
+
+</div>
